@@ -8,10 +8,15 @@ import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
 import java.math.BigDecimal;
-@FieldDefaults(level = AccessLevel.PRIVATE)
+
+/** Сущность автомобиля для автосалона.
+  Представляет полную информацию о транспортном средстве.
+ **/
+
 @Getter
 @Setter
 @Entity
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Car {
     @Id
     Long id;

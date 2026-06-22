@@ -9,10 +9,10 @@ import lombok.experimental.FieldDefaults;
 
 import java.math.BigDecimal;
 
-@FieldDefaults(level = AccessLevel.PRIVATE)
 @Getter
 @Setter
 @Entity
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class CarDtoAddition {
     @Id
     Long id;

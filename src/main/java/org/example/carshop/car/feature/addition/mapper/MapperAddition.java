@@ -11,11 +11,11 @@ import org.springframework.stereotype.Component;
 @Mapper(componentModel = "spring")
 public class MapperAddition {
 
-   public Car toCar(CarDtoAddition carDtoAddition){
+    public Car toCar(CarDtoAddition carDtoAddition) {
         return new Car();
     }
 
-    public CarDtoAddition toCarDtoAddition(Car car){
+    public CarDtoAddition toCarDtoAddition(Car car) {
         return new CarDtoAddition();
     }
 
