@@ -17,8 +17,8 @@ public class ServiceAdditionImpl implements ServiceAddition {
 
     @Override
     public CarDtoAddition insert(CarDtoAddition carDtoAddition) {
-        Car car = mapperAddition.toCar(carDtoAddition);
+        Car car = mapperAddition.map(carDtoAddition);
         Car addition = repositoryAddition.save(car);
-        return mapperAddition.toCarDtoAddition(addition);
+        return mapperAddition.map(addition);
     }
 }
