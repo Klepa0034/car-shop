@@ -1,0 +1,28 @@
+@startuml
+class Car;
+class CarDtoReceiving;
+class CarResponseReceiving;
+class CarRequestReceiving;
+interface RepositoryReceiving{
+List<Car> findAll()
+}
+interface MapperReceiving{
+CarDtoReceiving map(CarRequestReceiving carRequestReceiving)
+CarReceiving map (CarDto carDto)
+}
+class ControllerReceiving{
+void receiving(CarRequestReceiving carRequestReceiving)
+}
+interface ServiceReceiving{
+(List<CarDto> handle());
+}
+class ServiceReceivingImpl{
+(List<CarDto> handle());
+}
+
+ControllerReceiving *-- MapperReceiving
+ControllerReceiving *-- ServiceReceiving
+ServiceReceiving <|-- ServiceReceivingImpl
+ServiceReceivingImpl *-- MapperReceiving
+ServiceReceivingImpl *-- RepositoryReceiving
+@enduml

@@ -1,10 +1,7 @@
 package org.example.carshop.car.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.math.BigDecimal;
@@ -17,8 +14,11 @@ import java.math.BigDecimal;
 @Setter
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Table(name = "cars")
+@ToString
 public class Car {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String model;
     String brand;
