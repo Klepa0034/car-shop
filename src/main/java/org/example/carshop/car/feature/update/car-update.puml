@@ -1,0 +1,32 @@
+@startuml
+Interface CarUpdateRepository{
+(Car save())
+}
+class CarUpdateResponse;
+class Car;
+class CarUpdateRequest;
+class CarUpdateDto;
+class CarUpdateServiceImpl{
+(CarUpdateDto handle(CarUpdateDto carUpdate dto))
+}
+interface CarUpdateService{
+(CarUpdateDto handle(CarUpdateDto carUpdate dto))
+}
+interface CarUpdateMapper{
+CarUpdateDto map(CarUpdateRequest)
+CarUpdateResponse map (CarUpdateDto))
+}
+class CarUpdateController{
+CarUpdateResponse update(CarUpdateRequest request)
+}
+class CarUpdateMapperTwo{
+(CarUpdateDto map(Car car))
+}
+
+CarUpdateController *-- CarUpdateMapper
+CarUpdateController *-- CarUpdateService
+CarUpdateService <|-- CarUpdateServiceImpl
+CarUpdateServiceImpl *--CarUpdateMapperTwo
+CarUpdateServiceImpl *-- CarUpdateRepository
+@enduml
+//TODO Добавить мапперы контроллер/сервис сервис/репозиторий
