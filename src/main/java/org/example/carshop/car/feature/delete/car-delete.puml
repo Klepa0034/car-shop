@@ -1,0 +1,17 @@
+@startuml
+class Car;
+Interface CarDeleteRepository;
+Interface CarDeleteService{
+void handle (Long id)
+}
+class CarDeleteServiceImpl{
+void handle (Long id)
+}
+class CarDeleteController{
+void delete(Long id)
+}
+
+CarDeleteController *-- CarDeleteService
+CarDeleteService <|-- CarDeleteServiceImpl
+CarDeleteServiceImpl *-- CarDeleteRepository
+@enduml
